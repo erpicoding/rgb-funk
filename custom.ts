@@ -14,7 +14,7 @@ enum MyEnum {
 /**
  * RGB-Funk blocks
  */
-//% weight=100 color=#0fbc11 icon=""
+//% weight=80 color=#FF3030 icon="" block="Funk RGB"
 namespace custom {
 
     /**
@@ -24,7 +24,10 @@ namespace custom {
      * @param b Blauwert, eg: 255
      */
     //% block
-    export function sendRGB(r: number, g: number, b: number) {
+    //% r.min=0 r.max=255
+    //% g.min=0 g.max=255
+    //% b.min=0 b.max=255
+    export function sendeRGB(r: number, g: number, b: number) {
         radio.sendValue("r", r)
         radio.sendValue("g", g)
         radio.sendValue("b", b)
@@ -34,7 +37,7 @@ namespace custom {
      * @param value describe value here, eg: 5
      */
     //% block
-    export function recieveRGB() {
+    export function empfangeRGB() {
         let r;
         let g;
         let b;
